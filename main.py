@@ -27,19 +27,37 @@ class DBSetup:
                 RecipeID INTEGER NOT NULL,
                 RecipeName TEXT NOT NULL,
                 TimeToCook INTEGER NOT NULL,
+                Servings INTEGER NOT NULL,
                 Ingredient1 VARCHAR(255) NOT NULL,
+                Amount1 TEXT NOT NULL,
                 Ingredient2 VARCHAR(255) NOT NULL,
-                Ingredient3 VARCHAR(255),
-                Ingredient4 VARCHAR(255),
-                Ingredient5 VARCHAR(255),
-                Ingredient6 VARCHAR(255),
-                Ingredient7 VARCHAR(255),
-                Ingredient8 VARCHAR(255),
-                Ingredient9 VARCHAR(255),
-                Ingredient10 VARCHAR(255)
+                Amount2 TEXT NOT NULL,
+                Ingredient3 TEXT,
+                Amount3 TEXT,
+                Ingredient4 TEXT,
+                Amount4 TEXT,
+                Ingredient5 TEXT,
+                Amount5 TEXT,
+                Ingredient6 TEXT,
+                Amount6 TEXT,
+                Ingredient7 TEXT,
+                Amount7 TEXT,
+                Ingredient8 TEXT,
+                Amount8 TEXT,
+                Ingredient9 TEXT,
+                Amount9 TEXT,
+                Ingredient10 TEXT,
+                Amount10 TEXT,
+                Link TEXT
             );
             """
-
+            cursor.execute(table)
+            recipes: tuple((int, str, int, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str))[1] = {
+                tuple((0, "Omelette", 6, 1, "Egg", "2", "Water", "2 Tbsp", "Salt", "Pinch", "Pepper", "Pinch", "", "", "", "", "", "", "", "", "", "", "", "", "https://www.eggs.ca/recipes/basic-omelette")),
+                
+            }
+            for recipe in recipes:
+                cursor.execute('''INSERT INTO RECIPES VALUES {}'''.format(recipe))
 
 
 class DatabaseManager:
@@ -63,6 +81,7 @@ class DatabaseManager:
 
 def Main():
     DatabaseManager.ConnectToServer() 
+
     
 
 if __name__ == "__main__":
