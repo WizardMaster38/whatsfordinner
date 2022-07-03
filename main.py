@@ -54,7 +54,7 @@ class DBSetup:
             cursor.execute(table)
             recipes: tuple((int, str, int, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str))[1] = {
                 tuple((0, "Omelette", 6, 1, "Egg", "2", "Water", "2 Tbsp", "Salt", "Pinch", "Pepper", "Pinch", "", "", "", "", "", "", "", "", "", "", "", "", "https://www.eggs.ca/recipes/basic-omelette")),
-                
+                tuple((1, "Pan Seared Steak", 20, 4, "New York Strip Steaks (2 steaks)", "2 lbs", "Cooking Oil", ))
             }
             for recipe in recipes:
                 cursor.execute('''INSERT INTO RECIPES VALUES {}'''.format(recipe))
