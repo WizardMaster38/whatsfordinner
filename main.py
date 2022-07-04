@@ -8,7 +8,7 @@ class InputManager:
 
 
 class Ingredient:
-    def __init__(self, name, amount, units: str[10]):
+    def __init__(self, name, amount, units):
         self.name = name
         self.amount = amount
         self.units = units
@@ -54,8 +54,11 @@ class DBSetup:
                 recipes: tuple((int, str, int, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str))[1] = {
                     tuple((0, "Omelette", 6, 1, "Egg", "2", "Water", "2 Tbsp", "Salt", "0.0625 Tsp", "Pepper", "0.0625 Tsp",
                            "", "", "", "", "", "", "", "", "", "", "", "", "https://www.eggs.ca/recipes/basic-omelette")),
-                    tuple((1, "Pan Seared Steak", 20, 4, "New York Strip Steaks", "2 lbs", "Cooking Oil", "0.5 Tbsp", "Sea Salt", "1.5 Tsp", "Black Pepper", "1 Tsp",
-                           "Unsalted Butter", "2 Tbsp", "Quartered Onions", "2 Cloves", "Rosemary", "1 sprig", "", "", "", "", "", "", "https://natashaskitchen.com/pan-seared-steak/"))
+                    tuple((1, "Pan-Seared Steak", 20, 4, "New York Strip Steaks", "2 lbs", "Cooking Oil", "0.5 Tbsp", "Sea Salt", "1.5 Tsp", "Black Pepper", "1 Tsp",
+                           "Unsalted Butter", "2 Tbsp", "Quartered Onions", "2 Cloves", "Rosemary", "1 sprig", "", "", "", "", "", "", "https://natashaskitchen.com/pan-seared-steak/")),
+                    tuple((2, "Prime Ribs", 10, 95, "Beef Prime Rib", "5 lbs", "Rosemary", "2 Tsp", "Olive Oil", "0.25 Cups",
+                          "Sea Salt", "", "Black Pepper", "2 Tsp", "Minced Garlic", "8 cloves", "Thyme", "1 Tsp", "", "", "", "", "", "", "https://tastesbetterfromscratch.com/prime-rib/#recipe"))
+
 
                 }
             except sqlite3.Error as error:
@@ -75,7 +78,7 @@ class DBSetup:
                 print('Failed to commit to DB.', error)
         else:
             print('Cursor is broken! Please re-run this code and try again.')
-            exit(1);
+            exit(1)
 
 
 class DatabaseManager:
