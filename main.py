@@ -51,7 +51,7 @@ class DBSetup:
                     );
                     """
                 cursor.execute(table)
-                recipes: tuple((int, str, int, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str))[1] = {
+                recipes: tuple((int, str, int, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str))[10] = {
                     tuple((0, "Omelette", 6, 1, "Egg", "2", "Water", "2 Tbsp", "Salt", "0.0625 Tsp", "Pepper", "0.0625 Tsp",
                            "", "", "", "", "", "", "", "", "", "", "", "", "https://www.eggs.ca/recipes/basic-omelette")),
                     tuple((1, "Pan-Seared Steak", 20, 4, "New York Strip Steaks", "2 lbs", "Cooking Oil", "0.5 Tbsp", "Sea Salt", "1.5 Tsp", "Black Pepper", "1 Tsp",
